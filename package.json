@@ -4,7 +4,7 @@
   "description": "Converts Chinese numerals in a string into Arabic numerals.",
   "main": "chinese-numbers.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "chinese-numbers",
     "numbers",
     "arabic",
-	"arabic-numbers",
+    "arabic-numbers",
     "number",
     "numbers-converter",
     "convert",
@@ -23,16 +23,19 @@
     "chinese-numerals",
     "numerals",
     "cantonese",
-	"cantonese-numbers",
-	"cantonese-numerals",
-	"text-utils",
-	"utilities",
-	"asian-languages"
+    "cantonese-numbers",
+    "cantonese-numerals",
+    "text-utils",
+    "utilities",
+    "asian-languages"
   ],
   "author": "Anton Ivanov <anton@ivanov.hk>",
   "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/catcher-in-the-try/chinese-numbers-converter.js/issues"
   },
-  "homepage": "https://github.com/catcher-in-the-try/chinese-numbers-converter.js#readme"
+  "homepage": "https://github.com/catcher-in-the-try/chinese-numbers-converter.js#readme",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
 }
