@@ -63,6 +63,7 @@ ChineseNumber.numbers = {
   '勾': 9,
   '９': 9,
 
+  '个': '*1',
   '拾': '*10',
   '十': '*10',
   // '呀': '*10', // causes problems with casual "ah" at the end of sentence
@@ -88,6 +89,7 @@ ChineseNumber.NUMBER_IN_STRING_REGEX = new RegExp('(?:\\d+(?:[.,\\s]\\d+)*)*(?:[
 
 /** For converting strings like 8千3萬 into 8千3百萬. */
 ChineseNumber.reverseMultipliers = {
+  '1': '个',
   '10': '十',
   '100': '百',
   '1000': '千',
@@ -215,7 +217,9 @@ ChineseNumber.prototype.toInteger = function () {
               }
 
               // Replace all previous pairs with the new one:
-              pairs = [[numbersSoFar, arabic]]; // e.g. [[1000, 10000]]
+              pairs = [
+                [numbersSoFar, arabic]
+              ]; // e.g. [[1000, 10000]]
               currentPair = [];
             } else {
               // For cases like 十 in 十二:
@@ -396,10 +400,7 @@ ChineseNumber.prototype.addMissingUnits = function (str) {
         previousCharacterAsMultiplier !== undefined &&
 
         // e.g. 1000 < 10000 for 8千3萬, or it's the last character in string:
-        (parseInt(previousCharacterAsMultiplier) < parseInt(nextCharacterArabic) || characters[i + 1] === undefined) &&
-
-        // For numbers like 十五, there are no other units to be appended at the end
-        previousCharacterAsMultiplier !== '10'
+        (parseInt(previousCharacterAsMultiplier) < parseInt(nextCharacterArabic) || characters[i + 1] === undefined)
       ) {
         // E.g. for 8千3, add 百:
         var oneOrderSmaller = (parseInt(previousCharacterAsMultiplier) / 10).toString();
