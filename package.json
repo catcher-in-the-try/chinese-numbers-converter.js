@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/catcher-in-the-try/chinese-numbers-converter.js.git"
+    "url": "git+https://github.com/anton-bot/chinese-numbers-converter.js.git"
   },
   "keywords": [
     "chinese",
@@ -32,10 +32,10 @@
   "author": "Anton Ivanov <anton@ivanov.hk>",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/catcher-in-the-try/chinese-numbers-converter.js/issues"
+    "url": "https://github.com/anton-bot/chinese-numbers-converter.js/issues"
   },
-  "homepage": "https://github.com/catcher-in-the-try/chinese-numbers-converter.js#readme",
-  "dependencies": {
+  "homepage": "https://github.com/anton-bot/chinese-numbers-converter.js#readme",
+  "devDependencies": {
     "should": "^13.2.3"
   }
 }
